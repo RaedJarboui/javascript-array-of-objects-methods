@@ -113,6 +113,20 @@ export class AppComponent implements OnInit {
     let slice_car_2 = this.cars.slice(0,2)
     console.log("slice_car_2 : ",slice_car_2)
 
+    //reverse
+
+    let reversed_array = this.cars.reverse();
+    console.log("revered cars array : ",reversed_array)
+
+    //map spread objects
+    let map_spread_array = this.cars.map(car=>{
+      if (car['color'] =="red"){
+        return {...car,isRed:true}
+      }else return {...car,isRed:false}
+    })
+    console.log("map_spread_array cars array : ",map_spread_array)
+
+
 
 
 
