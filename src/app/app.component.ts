@@ -126,7 +126,9 @@ export class AppComponent implements OnInit {
     })
     console.log("map_spread_array cars array : ",map_spread_array)
 
-
+    //includes : like some function but only works in primitiveType
+    let includes_array = Array.of("Red","Blue","Green","Yellow","Black","White","Purple").includes("Red");
+    console.log("includes_array : ",includes_array)
 
 
 
