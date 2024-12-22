@@ -10,19 +10,19 @@ export class AppComponent implements OnInit {
   title = 'Array_JS_methods';
    cars = [
     {
-      "color": "green",
-      "type": "Renaut",
-      "capacity": 7
+      color: "green",
+      type: "Renaut",
+      capacity: 7
     },
     {
-      "color": "red",
-      "type": "Citroen",
-      "capacity": 5
+      color: "red",
+      type: "Citroen",
+      capacity: 5
     },
     {
-      "color": "blue",
-      "type": "Peugeot",
-      "capacity": 3
+      color: "blue",
+      type: "Peugeot",
+      capacity: 3
     },
    
   ]
@@ -86,6 +86,33 @@ export class AppComponent implements OnInit {
 
     //forEach : loop inside cars array 
     this.cars.forEach(car=>console.log("cars loop : ",car))
+
+    //splice : add element
+    this.cars.splice(2,0,{  color: "grey",
+      type: "KIA",
+      capacity:5})
+      console.log("this cars after splice :",this.cars)
+
+      //splice : remove element by index 
+
+      this.cars.splice(3,1)
+      console.log("this.cars after splice to remove element : ",this.cars)
+
+
+    //sort
+
+    let sorted_cars_color = this.cars.sort((car1,car2)=>(car1.color.localeCompare(car2.color)))
+    console.log("sorted cars by color :",sorted_cars_color)
+    let sorted_cars_capacity = this.cars.sort((car1,car2)=>car1.capacity - car2.capacity)
+    console.log("sorted cars by capacity :",sorted_cars_capacity)
+
+    //slice
+    console.log("cars array before slice : ",this.cars)
+    let slice_car = this.cars.slice(1)
+    console.log("slice_car : ",slice_car)
+    let slice_car_2 = this.cars.slice(0,2)
+    console.log("slice_car_2 : ",slice_car_2)
+
 
 
 
