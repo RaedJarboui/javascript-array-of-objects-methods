@@ -27,8 +27,11 @@ export class AppComponent implements OnInit {
    
   ]
 
+  colors : string[] = ["red","yellow","green"]
+
   ngOnInit(): void {
     this.arrayMethods(this.cars);
+    this.stringMethods(this.title)
   }
 
   arrayMethods(cars:{color:string,type:string,capacity:number}[]){
@@ -118,6 +121,10 @@ export class AppComponent implements OnInit {
     let reversed_array = this.cars.reverse();
     console.log("revered cars array : ",reversed_array)
 
+    //join
+      console.log("colors join :",this.colors.join("-"))
+
+
     //map spread objects
     let map_spread_array = this.cars.map(car=>{
       if (car['color'] =="red"){
@@ -130,6 +137,71 @@ export class AppComponent implements OnInit {
     let includes_array = Array.of("Red","Blue","Green","Yellow","Black","White","Purple").includes("Red");
     console.log("includes_array : ",includes_array)
 
+
+
+  }
+
+  stringMethods(str: string) : void{
+
+    //length string
+    var str_length = str.length;
+    console.log("str lenght :" ,str_length)
+
+    //replace string
+    console.log("replace word methods with operations : ",str.replace("methods","operations"))
+
+    //concat string
+
+    var concat_str = str.concat("_Operations")
+    console.log("concat String :",concat_str)
+    //toUppercase, toLowerCase
+
+    var str_upper = str.toUpperCase()
+    var str_lower = str.toLowerCase()
+    console.log("string uppercase : ",str_upper + "string lowerCase : ",str_lower)
+
+    //charAT
+    var first_letter = str.charAt(0);
+    console.log("first letter of string str :",first_letter)
+
+    //startsWith, endsWith
+    console.log("str starts with A ",str.startsWith('A')) //true
+    console.log("str ends with A :",str.endsWith("S")) //false
+
+
+    //trim
+    var phrase : string = "     Array Javascript    "
+    console.log("phrase trim : ",phrase.trim())
+
+    //split
+    let array : string[] = str.split('_')
+    console.log("array first element :",array[0])
+
+    //substring
+    console.log("first word with 5 letters :",str.substring(0,5))
+    console.log("phrase after index 5 :",str.substring(5))
+
+    //slice
+    console.log(" first word with 5 letters:",str.slice(0,5))
+    console.log(" phrase after index 5:",str.slice(5))
+
+    //at
+    var first_letter_at = str.at(0);
+    console.log("first letter of string str :",first_letter_at)
+
+    //repeat
+    var repeated_str = str.repeat(2)
+    console.log("repeated_str:",repeated_str)
+
+
+    //indexOf, lastIndexOf
+    var index : number = str.indexOf("ARRAY")
+    console.log("index : ",index) //-1
+    console.log("indexOf : ",str.indexOf("Array"))
+
+
+    //includes
+    console.log("indexOf : ",str.includes("Array")) //true
 
 
   }
